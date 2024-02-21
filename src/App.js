@@ -1,12 +1,13 @@
-
-import './App.css';
-// import Main from "./Components/Main/Main.tsx";
+import  './App.sass'
+import  Header from './App/Header/Header.jsx'
+import  Main from './App/Main/Main'
 
 function App() {
   return (
-      <div>
-57645
-      </div>
+    <>
+      <Header/>
+      <Main/>
+    </>
   );
 }
 

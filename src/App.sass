@@ -1,0 +1,180 @@
+body
+    background-color: rgba(33, 33, 41, 1)
+    color: #fff
+    padding: 50px
+a
+    text-decoration: none
+    color: inherit
+.header-wrap
+    display: flex
+    align-items: center
+    margin-bottom: 29px
+    &>div
+        margin-right: 16px
+        &:last-of-type
+            margin-right: 0
+.logo
+    font-size: 30px
+    line-height: 30px
+.serch
+    background: transparent
+    border: 1px solid rgba(149, 149, 149, 1)
+    border-radius: 12px
+    height: 48px
+    width: 469px
+    &:focus-visible~.serch-placeholder
+        display: none
+    &-wrap
+        position: relative
+    &-placeholder
+        position: absolute
+        top: 12px
+        left: 20px
+        display: flex
+        align-items: center
+        color: rgba(149, 149, 149, 1)
+        & svg
+            margin-right: 5px
+.button
+    background-color: rgba(53, 53, 66, 1)
+    border: 1px solid transparent
+    border-radius: 10px
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 12px 20px
+    font-size: 18px
+    line-height: 24px
+    &.active
+        background-color: rgba(33, 33, 41, 1)
+    &-wrap
+        background: linear-gradient( #84d52c5c , #17172200)
+        border-radius: 10px
+        padding: 1px
+        margin-right: 10px
+        cursor: pointer
+        &:last-of-type
+            margin-right: 0
+    &-wrapper
+        display: flex
+    & svg
+        margin-right: 10px
+
+.header-runners
+    display: flex
+    gap: 80px
+    margin-bottom: 80px
+    margin-left: 16px
+    & .title
+        line-height: 26.6px
+        font-size: 16px
+        margin-bottom: 23.2px
+    & .runner
+        position: relative
+        &-wrap
+            display: flex
+            flex-direction: column
+            margin-right: 25px
+            &:last-of-type
+                margin-right: 26.93px  
+        & .scale
+            width: 225.07px
+            height: 4px
+            border-radius: 3px
+        &-filled
+            height: 4px
+            background:#7acb22
+            left: 0%
+            position: absolute
+        &-empty
+            height: 4px
+            background: #30303d
+    & .flag
+        border-radius: 50%
+        height: 16px
+        width: 16px
+        background: linear-gradient(#85d62d ,#6bab2b)
+        position: absolute
+        cursor: pointer
+        top: -6px
+        &-end
+            right: -16px
+        &-start
+            left: -16px
+        &-indicator 
+            top: -42px
+            padding: 2px 5px
+            border-radius: 5px
+            background-color: rgba(48, 48, 61, 1)
+            position: absolute
+            &-wrap
+                position: relative
+
+
+
+.double-bar 
+    display: block
+    width: 176px
+    height: 4px
+
+    background-color: rgba(255, 255, 255, 0.2)
+    border-radius: 30px
+
+
+.double-bar .white-part 
+    display: flex
+    justify-content: space-between
+    height: 4px
+
+    background-color: #ffffff
+
+
+.double-bar .point 
+    width: 4px
+    height: 4px
+    margin-top: -8px
+
+    background-color: #ababab
+    border: 8px solid #ffffff
+    border-radius: 50%
+
+
+.double-bar .point:first-child 
+    margin-left: -8px
+
+
+.double-bar .point:last-child 
+    margin-right: -8px
+
+
+.visually-hidden 
+    position: absolute
+    clip: rect(0 0 0 0)
+    width: 1px
+    height: 1px
+    margin: -1px
+
+
+
+.results
+    &-parameters
+        display: flex
+        align-items: center
+    &-title
+        line-height: 16.2px
+        font-size: 12px
+        margin: 0 15px 0 30px
+.parameters
+    display: flex
+    & .parameter
+        display: flex
+        align-items: center
+        padding: 5px 8px
+        border-radius: 20px
+        background: rgba(41, 112, 25, 1)
+        margin-right: 10px
+        &:last-of-type
+            margin-right: 0
+        &-name
+            line-height: 16.2px
+            font-size: 12px

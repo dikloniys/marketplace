@@ -1,69 +1,43 @@
-<head><script defer src="main.js"></script></head>Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module not found: Error: Can't resolve 'C:\Users\vavan\marketplace\src\index.html' in 'C:\Users\vavan\marketplace'
-  ModuleNotFoundError: Module not found: Error: Can't resolve 'C:\Users\vavan\marketplace\src\index.html' in 'C:\Users\vavan\marketplace'
-      at C:\Users\vavan\marketplace\node_modules\webpack\lib\Compilation.js:2029:28
-      at C:\Users\vavan\marketplace\node_modules\webpack\lib\NormalModuleFactory.js:895:13
-      at eval (eval at create (C:\Users\vavan\marketplace\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:10:1)
-      at C:\Users\vavan\marketplace\node_modules\webpack\lib\NormalModuleFactory.js:332:22
-      at eval (eval at create (C:\Users\vavan\marketplace\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:9:1)
-      at C:\Users\vavan\marketplace\node_modules\webpack\lib\NormalModuleFactory.js:509:22
-      at C:\Users\vavan\marketplace\node_modules\webpack\lib\NormalModuleFactory.js:151:11
-      at C:\Users\vavan\marketplace\node_modules\webpack\lib\NormalModuleFactory.js:767:25
-      at C:\Users\vavan\marketplace\node_modules\webpack\lib\NormalModuleFactory.js:979:8
-      at C:\Users\vavan\marketplace\node_modules\webpack\lib\NormalModuleFactory.js:1109:5
-  
-  - Compilation.js:2029 
-    [marketplace]/[webpack]/lib/Compilation.js:2029:28
-  
-  - NormalModuleFactory.js:895 
-    [marketplace]/[webpack]/lib/NormalModuleFactory.js:895:13
-  
-  
-  - NormalModuleFactory.js:332 
-    [marketplace]/[webpack]/lib/NormalModuleFactory.js:332:22
-  
-  
-  - NormalModuleFactory.js:509 
-    [marketplace]/[webpack]/lib/NormalModuleFactory.js:509:22
-  
-  - NormalModuleFactory.js:151 
-    [marketplace]/[webpack]/lib/NormalModuleFactory.js:151:11
-  
-  - NormalModuleFactory.js:767 
-    [marketplace]/[webpack]/lib/NormalModuleFactory.js:767:25
-  
-  - NormalModuleFactory.js:979 
-    [marketplace]/[webpack]/lib/NormalModuleFactory.js:979:8
-  
-  - NormalModuleFactory.js:1109 
-    [marketplace]/[webpack]/lib/NormalModuleFactory.js:1109:5
-  
-  - child-compiler.js:174 
-    [marketplace]/[html-webpack-plugin]/lib/child-compiler.js:174:18
-  
-  - Compiler.js:564 finalCallback
-    [marketplace]/[webpack]/lib/Compiler.js:564:5
-  
-  - Compiler.js:590 
-    [marketplace]/[webpack]/lib/Compiler.js:590:11
-  
-  - Compiler.js:1213 
-    [marketplace]/[webpack]/lib/Compiler.js:1213:17
-  
-  
-  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
-    [marketplace]/[tapable]/lib/Hook.js:18:14
-  
-  - Compiler.js:1209 
-    [marketplace]/[webpack]/lib/Compiler.js:1209:33
-  
-  - Compilation.js:2802 finalCallback
-    [marketplace]/[webpack]/lib/Compilation.js:2802:11
-  
-  - Compilation.js:3107 
-    [marketplace]/[webpack]/lib/Compilation.js:3107:11
-  
-  
-</pre>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
