@@ -1,5 +1,4 @@
 import React from "react";
-import * as style from "./Search.module.sass"
 
 
 function Search() {

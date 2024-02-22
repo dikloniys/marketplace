@@ -1,4 +1,4 @@
-
+import React from "react";
 import Slider from './Slider/Slider'
 import Radio from './Radio/Radio'
  const obj = [
@@ -7,27 +7,30 @@ import Radio from './Radio/Radio'
           symbol: "$", 
           valueStart: 0, 
           valueEnd: 300, 
-          startedStart:0,
-          startedEnd:300,
-          startMove:true,
+          endPoint: 300, 
+          disabled:true,
+          width: 225,
+          progressBar:100,
         },
         {
           title: "ТНС, %",
           symbol: "%",
           valueStart: 0,
           valueEnd: 100,
-          startedStart:0,
-          startedEnd:100,
-          startMove:false,
+          endPoint: 100, 
+          disabled:false,
+          width: 225,
+          progressBar:100,
         },
         {
           title: "CBD, %",
           symbol: "%",
           valueStart: 0,
           valueEnd: 100,
-          startedStart:0,
-          startedEnd:100,
-          startMove:false,
+          endPoint: 100, 
+          disabled:false,
+          width: 225,
+          progressBar:100,
         },
       ]
 function Sliders() {
@@ -41,5 +44,7 @@ function Sliders() {
         </div>
     )
 }
-
+Slider.propTypes = {
+  sliderData : Slider.node,
+}
 export default Sliders;

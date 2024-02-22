@@ -1,23 +1,31 @@
 import React, { useState, useRef } from "react";
 
+
 const Slider = ({sliderData}) => {
     const [valStart, setValueStart] = useState(sliderData.valueStart);
     const [valEnd, setValueEnd] = useState(sliderData.valueEnd);
     const useRefStart = useRef(null)
     const useRefEnd = useRef(null)
-    
+
+    const chankc = sliderData.width / sliderData.endPoint
+
     const handleStartDrag = () => {
-      if (sliderData.startMove) {
         const rect = useRefStart.current.getBoundingClientRect();
         const onMouseMove = (event) => {
-          let newValue = Math.round(event.clientX - rect.x);
-          if(newValue < 0){
+          let newValue = valStart + (event.clientX - rect.x )*chankc;
+          console.log(newValue);
+          console.log(valStart);
+          console.log(event.clientX);
+          console.log(rect.x);
+          setValueStart(() => {
+            if(newValue < 0){
               newValue = 0
-          }
-          if(newValue > valEnd){
-              newValue = valEnd
-          }
-          setValueStart(() => newValue);
+            }
+            if(newValue > valEnd){
+                newValue = valEnd-1
+            }
+            return Math.round(newValue)
+          });
         };
     
         const onMouseUp = () => {
@@ -28,24 +36,22 @@ const Slider = ({sliderData}) => {
         document.addEventListener("mousemove", onMouseMove);
         document.addEventListener("mouseup", onMouseUp);
       }
-    }
-
-    const handleEndDrag = (event) => {
-      event.preventDefault();
+    const handleEndDrag = () => {
       const rect = useRefEnd.current.getBoundingClientRect();
       const onMouseMove = (event) => {
-
-        let newValue = Math.round((event.clientX - rect.x)+valEnd);
-        console.log(event.clientX );
-        console.log(rect.x);
-        console.log(newValue);
-        if(newValue < valStart){
-            newValue = valStart+1
-        }if(newValue > sliderData.startedEnd){
-            newValue = sliderData.startedEnd
-        }
-        setValueEnd( prev => newValue);
-
+        //let newValue = valEnd+(event.clientX - rect.x)/2
+        let newValue =  valEnd + (event.clientX - rect.x)*chankc
+        
+        console.log(newValue)
+        console.log(rect.x)
+        setValueEnd(() =>{
+          if(newValue < valStart){
+              newValue = valStart+1
+          }if(newValue > sliderData.endPoint){
+              newValue = sliderData.endPoint
+          } 
+          return Math.round(newValue)
+        });
       };
       const onMouseUp = () => {
         document.removeEventListener("mousemove", onMouseMove);
@@ -58,15 +64,18 @@ const Slider = ({sliderData}) => {
         <div className="runner-wrap">
           <div className="title">{sliderData.title}</div>
           <div className="runner">
-            <div className="scale">
+            <div className="scale" style={{ width: sliderData.width}}>
               <div
                 className="runner-filled scale-filled"
-                style={{ width: `${(valEnd - valStart) / sliderData.startedEnd * 100}%`, left: `${(valStart / sliderData.startedEnd) * 100}%` }}
+                //style={{ width: `${((valEnd-valStart)/sliderData.endPoint)*100}%`, left: `${(valStart/sliderData.endPoint) * sliderData.progressBar}%`}}
+                //style={{ right: `${((sliderData.width/100)*valEnd)}px`, left: `${(sliderData.width/100)*valStart}px`}}
+                style={{ right: `${sliderData.width-chankc*valEnd}px`, left: `${chankc*valStart}px`}}
               >
-                <div className="flag flag-start" ref={useRefStart} onMouseDown={handleStartDrag}>
+                <div className="flag flag-start"  style={{pointerEvents: sliderData.disabled?  'auto' : "none" }}  ref={useRefStart} onMouseDown={handleStartDrag}>
                 </div>
                 <div className="flag flag-end" ref={useRefEnd} onMouseDown={handleEndDrag}>
                   <div className="flag-indicator-wrap">
+
                     <div className="flag-indicator indicator-end">{valEnd}{sliderData.symbol}</div>
                   </div>
                 </div>
@@ -81,5 +90,7 @@ const Slider = ({sliderData}) => {
         </div>
       );
   };
-  
+  Slider.propTypes = {
+    sliderData : Slider.node,
+  }
   export default Slider;
